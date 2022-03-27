@@ -7,6 +7,8 @@ server {
 
     server_name localhost;
 
+    rewrite ^/${HOSTED_AT_BASE_URL}/(.*) /$1 break;
+
     location ~* \.(?:manifest|appcache|html?|xml|json)$ {
         expires -1;
     }
