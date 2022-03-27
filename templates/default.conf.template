@@ -7,7 +7,11 @@ server {
 
     server_name localhost;
 
+    # allows "hosted at" applications to correctly retrieve files
     rewrite ^/${HOSTED_AT_BASE_URL}/(.*) /$1 break;
+
+    # allows the-force controlled apps to correctly retrieve files
+    rewrite ^/bundles/${HOSTED_AT_BASE_URL}/(.*) /dist/$1 break;
 
     location ~* \.(?:manifest|appcache|html?|xml|json)$ {
         expires -1;
