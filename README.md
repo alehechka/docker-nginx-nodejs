@@ -1,1 +1,1 @@
-# nginx-brotli
+# alehechka/nginx-brotli
